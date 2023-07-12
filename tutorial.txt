@@ -1,0 +1,11 @@
+In this code, the ProtectedRoute component is a high-level wrapper that adds protection to certain routes based on the isLoggedIn state. Its purpose is to restrict access to certain pages or components unless the user is logged in.
+
+Here's how the ProtectedRoute component works:
+
+If isLoggedIn is false, meaning the user is not logged in, it immediately redirects the user to the root path ('/') using the <Navigate> component from react-router-dom. The replace prop is set to true, which replaces the current history entry in the browser's history stack, preventing the user from going back to the protected page using the browser's back button.
+
+If isLoggedIn is true, it renders the children passed to it. In this code, the children refers to the components wrapped by the <ProtectedRoute> tags in the route configuration.
+
+Essentially, the ProtectedRoute acts as a gatekeeper that checks the user's login status before allowing access to protected pages. If the user is not logged in, they are redirected to the root path. If the user is logged in, the protected pages are rendered normally.
+
+In the provided code, the contact, list, and item details pages are wrapped with the <ProtectedRoute> component to protect them from unauthorized access.
